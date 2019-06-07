@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
-    <link href="css/category.css" rel="stylesheet" />
     <link href="css/MasterPage.css" rel="stylesheet" />
 </head>
 <body>
@@ -42,31 +41,31 @@
                         <li><a href="mailto:support@colorlib.com">support@colorlib.com</a></li>
                     </ul>
                     <ul class="list">
-                        <li><a>
-                            <img src="MyImg.png" alt="Avatar" id="miniimg2" /></a></li>
+                        
                         <li><a href="Login.aspx">Login</a></li>
-                        <li><a href="#">Registered</a></li>
+                        <li><a href="Registered.aspx">Registered</a></li>
+                        <%--<li><a href="#"><asp:Label runat="server" ID="Lbname" /></a></li>--%>
                     </ul>
                 </div>
             </div>
         </div>
         <nav class="navbar navbar-expand-lg  navbar-light">
             <div class="container">
-                <a id="logo" class="navbar-brand font-weight-bold" href="Home.aspx">Scared Shop Mall</a>
+                <a id="logo" class="navbar-brand font-weight-bold" href="Home.aspx">水水水</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li><a href="Home.aspx">Home</a></li>
-                        <li><a href="#latest">Shop</a></li>
+                        <li><a href="Category.aspx">Category</a></li>
                         <!-- Dropdown Product Manager -->
                         <li class="dropdown">
                             <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Product Manager
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="CreProduct.aspx">Select Product</a>
-                                <a class="dropdown-item" href="single.html">Create Product</a>
+                                <a class="dropdown-item" href="#">Select Product</a>
+                                <a class="dropdown-item" href="CreProduct.aspx">Create Product</a>
                                 <a class="dropdown-item" href="cart.html">Update Product</a>
                                 <a class="dropdown-item" href="cart.html">Delete Product</a>
                             </div>
@@ -86,7 +85,7 @@
             </div>
         </nav>
     </header>
-    <div class="topBlock"></div>
+    <div class="topBlock" style="height: 55.19px"></div>
     <!-- End Header Area -->
 
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
