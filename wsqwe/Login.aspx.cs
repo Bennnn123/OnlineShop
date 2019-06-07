@@ -14,26 +14,32 @@ public partial class Login : System.Web.UI.Page
 
     protected void btnlogin_Click(object sender, EventArgs e)
     {
+
         //接textBox
-        string id = txtUserName.Text;
-        string pw = txtPassWord.Text;
+        //string id = txtUserName.Text;
+        //string pw = txtPassWord.Text;
+
+        Member m = new Member();
 
         MemberHandler mber = new MemberHandler();
 
         List<Member> berList = mber.GetCasePath();
 
-        if (mber.CompareUserName(id) == false && mber.ComparePassWord(pw) == false)
+        Session["UserName"] = txtUserName.Text;
+        Session["PassWord"] = txtPassWord.Text;
+
+        if (mber.CompareUserName(Convert.ToString(Session["UserName"])) == false && mber.ComparePassWord(Convert.ToString(Session["PassWord"])) == false)
         {
             mber.strMsg("該用戶尚未註冊，請先加入會員再執行此動作!");
             Response.Redirect("~/AddMember.aspx");
         }
         else
         {
-            if (mber.CompareUserName(id) == false)
+            if (mber.CompareUserName(Convert.ToString(Session["UserName"])) == false)
             {
                 mber.strMsg("您輸入的帳號有誤，請再次檢查是否輸入正確!");
             }
-            else if (mber.ComparePassWord(pw) == false)
+            else if (mber.ComparePassWord(Convert.ToString(Session["PassWord"])) == false)
             {
                 mber.strMsg("您輸入的密碼有誤，請再次檢查是否輸入正確!");
             }

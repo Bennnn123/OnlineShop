@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMaster.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 			<section class="category-area section-gap section-gap" id="catagory">
 				<div class="container">
@@ -63,6 +66,8 @@
 						</div>						
 					</div>
 				</div>	
+
+                <%# Func(Eval(1)) %>
 			</section>
 
 

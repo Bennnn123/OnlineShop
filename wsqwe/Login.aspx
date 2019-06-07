@@ -1,15 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProdMaster.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <br />
-    <br />
     <div class="col-md-6" id="logindiv">
         <div class="login-form ">
             <h3 class="billing-title text-center">Login</h3>
             <div class="imgcontainer">
-                <img src="MyImg.png" id="meimg" alt="Avatar" class="avatar">
+                <img src="userimg.png" id="meimg" alt="Avatar" class="avatar">
+                <p class="text-center mt-80 mb-40">Welcome back! Sign in to your account </p>
             </div>
-            <p class="text-center mt-80 mb-40">Welcome back! Sign in to your account </p>
+            
             <form runat="server">
                 <asp:TextBox runat="server" ID="txtUserName" CssClass="common-input" placeholder="Please enter your UserName" />
                 <asp:TextBox runat="server" ID="txtPassWord" CssClass="common-input" placeholder="Please enter your PassWord" />

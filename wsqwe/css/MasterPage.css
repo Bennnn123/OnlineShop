@@ -1,4 +1,6 @@
-﻿
+﻿body{
+    font-family:'Microsoft YaHei';
+}
 .topBlock {
     height: 55.19px;
 }
