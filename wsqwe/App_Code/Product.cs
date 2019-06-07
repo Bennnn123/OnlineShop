@@ -10,27 +10,26 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.ComponentModel;
 
-public class Product {
-
-    public int Id { get; set; }
+public class Product
+{
     public string Name { get; set; }
     public int Price { get; set; }
     public int Amount { get; set; }
     public string ImageFileName { get; set; }
-    public int CategoryID { get; set; }
-    public int TargetCustomer { get; set; }
 }
 
-public class ProductHandler {
-
+public class ProductHandler
+{
     private string SourcesPath;
     private string ssql;
 
-    public ProductHandler() {
+    public ProductHandler()
+    {
         SourcesPath = WebConfigurationManager.ConnectionStrings["CaseDBConnectionString1"].ConnectionString;
     }
 
-    public List<Product> GetCasePath() {
+    public List<Product> GetCasePath()
+    {
         SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Products", this.SourcesPath);
 
         DataTable dt = new DataTable();
@@ -38,7 +37,8 @@ public class ProductHandler {
         sda.Fill(dt);
 
         var query = from row in dt.AsEnumerable()
-                    select new Product() {
+                    select new Product()
+                    {
                         Name = row["Name"].ToString(),
                         Price = (int)row["Price"],
                         Amount = (int)row["Amount"],
@@ -48,7 +48,8 @@ public class ProductHandler {
         return query.ToList();
     }
 
-    public void AddToProducts(string ProdName, int Price, int Amount) {
+    public void AddToProducts(string ProdName, int Price, int Amount)
+    {
         ssql = "insert into Products(Name,Price,Amount) values(@prodname,@price,@amount)";
 
         SqlDataAdapter sda = new SqlDataAdapter(ssql, this.SourcesPath);
@@ -62,8 +63,10 @@ public class ProductHandler {
         sda.Update(dt);
     }
 
-    public void AddToProducts(Product p) {
-        using (SqlConnection cn = new SqlConnection(this.SourcesPath)) {
+    public void AddToProducts(Product p)
+    {
+        using (SqlConnection cn = new SqlConnection(this.SourcesPath))
+        {
             SqlCommand cmd = new SqlCommand(
                 "insert into Products values(@name , @price , @amount , @imgUrl)",
                 cn);
@@ -79,7 +82,8 @@ public class ProductHandler {
         }
     }
 
-    public void AddToProducts(string ProdName, int Price, int Amount, string ProdImg) {
+    public void AddToProducts(string ProdName, int Price, int Amount, string ProdImg)
+    {
         ssql = "insert into Products(Name,Price,Amount,ImageFileName) values(@prodname,@price,@amount,@imgfilename)";
 
         SqlDataAdapter sda = new SqlDataAdapter(ssql, this.SourcesPath);
@@ -94,7 +98,8 @@ public class ProductHandler {
         sda.Update(dt);
     }
 
-    public bool CompareProdName(string ProdName) {
+    public bool CompareProdName(string ProdName)
+    {
         ssql = "SELECT* FROM Products WHERE Name=@name";
 
         SqlDataAdapter sd = new SqlDataAdapter(ssql, this.SourcesPath);
@@ -110,7 +115,8 @@ public class ProductHandler {
 
     }
 
-    public void OutputFileFormat(string str, string FileName) {
+    public void OutputFileFormat(string str, string FileName)
+    {
         StreamWriter sw = new StreamWriter(HttpContext.Current.Server.MapPath($"{FileName}"));
 
         sw.WriteLine(str);
@@ -122,31 +128,38 @@ public class ProductHandler {
 
 
 
-    public string ProdString(string N, string P, string A, string I) {
+    public string ProdString(string N, string P, string A, string I)
+    {
         return $"產品名稱：{N}，產品價格：{P}元，產品數量：{A}杯，圖片檔名：{I}";
     }
 
-    public string ProdString(string N, string P, string A) {
+    public string ProdString(string N, string P, string A)
+    {
         return $"產品名稱：{N}，產品價格：{P}元，產品數量：{A}杯";
     }
 
-    public void CapBPrice(int ProdPrice, BulletedList buList) {
-        foreach (Product item in GetCasePath()) {
-            if (int.Parse(item.Price.ToString()) > ProdPrice) {
+    public void CapBPrice(int ProdPrice, BulletedList buList)
+    {
+        foreach (Product item in GetCasePath())
+        {
+            if (int.Parse(item.Price.ToString()) > ProdPrice)
+            {
                 buList.Items.Add(ProdString(item.Name, item.Price.ToString(), item.Amount.ToString(), item.ImageFileName));
             }
         }
     }
 
 
-    public void strMsg(string Msg) {
+    public void strMsg(string Msg)
+    {
         System.Web.HttpContext.Current.Response.Write("<Script language='Javascript'>");
         System.Web.HttpContext.Current.Response.Write($"alert('{Msg}')");
         System.Web.HttpContext.Current.Response.Write("</" + "Script>");
     }
 
 
-    public void UpdProdInfo(string prod) {
+    public void UpdProdInfo(string prod)
+    {
         //List<Product> prodList = GetCasePath();
         SqlDataAdapter sda = new SqlDataAdapter("update ", this.SourcesPath);
 
