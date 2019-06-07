@@ -1,0 +1,10 @@
+﻿
+.topBlock {
+    height: 55.19px;
+}
+
+@media (max-width: 992px) {
+    .topBlock {
+        height: 63.19px;
+    }
+}
