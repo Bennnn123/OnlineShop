@@ -6,8 +6,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-
-
     <!-- Start Banner Area -->
     <section class="banner-area uuu-category-section">
         <div class="container">
@@ -22,6 +20,7 @@
             </div>
         </div>
     </section>
+
     <!-- End Banner Area -->
     <div class="container">
         <div class="row">
