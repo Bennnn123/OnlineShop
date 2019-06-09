@@ -16,7 +16,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Shop</title>
+    <title>現主時</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--CSS============================================= -->
@@ -37,47 +37,43 @@
             <div class="menu-top container">
                 <div class="d-flex justify-content-between align-items-center">
                     <ul class="list">
-                        <li><a href="tel:+12312-3-1209">+12312-3-1209</a></li>
-                        <li><a href="mailto:support@colorlib.com">support@colorlib.com</a></li>
+                        <li><a href="tel:+12312-3-1209">(+886)02-1234-5678</a></li>
+                        <li><a href="mailto:support@colorlib.com">聯絡我們</a></li>
                     </ul>
-                    <ul class="list">
-                        
-                        <li><a href="Login.aspx">Login</a></li>
-                        <li><a href="Registered.aspx">Registered</a></li>
-                        <%--<li><a href="#"><asp:Label runat="server" ID="Lbname" /></a></li>--%>
+                    <ul class="list">  
+                        <li><a href="#"><asp:Label runat="server" ID="Lbname" Text="" /></a></li>  
+                        <li><a href="Logout.aspx" runat="server" id="alogout"  >登出</a></li>                        
+                        <li><a href="Login.aspx" runat="server" id="alogin"  >登入</a></li>
+                        <li><a href="Registered.aspx" runat="server" id="aregist" >註冊</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <nav class="navbar navbar-expand-lg  navbar-light">
             <div class="container">
-                <a id="logo" class="navbar-brand font-weight-bold" href="Home.aspx">水水水</a>
+                <a id="logo" class="navbar-brand font-weight-bold" href="Home.aspx">現主時流行服飾</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li><a href="Home.aspx">Home</a></li>
-                        <li><a href="Category.aspx">Category</a></li>
+                        <li><a href="Home.aspx">首頁</a></li>
+                        <li><a href="Category.aspx">商品類別</a></li>
                         <!-- Dropdown Product Manager -->
                         <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Product Manager
-                            </a>
+                            <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">產品管理</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Select Product</a>
-                                <a class="dropdown-item" href="CreProduct.aspx">Create Product</a>
+                                <a class="dropdown-item" href="#">查詢產品</a>
+                                <a class="dropdown-item" href="CreProduct.aspx">建立產品</a>
                                 <a class="dropdown-item" href="cart.html">Update Product</a>
                                 <a class="dropdown-item" href="cart.html">Delete Product</a>
                             </div>
                         </li>
                         <!-- Dropdown Members Manager -->
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">Merber Manager
-                            </a>
+                        <li class="dropdown" >
+                            <a class="dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">會員管理</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="category.html">Select Merber</a>
-                                <a class="dropdown-item" href="cart.html">Update Product</a>
-                                <a class="dropdown-item" href="cart.html">Delete Product</a>
+                                <a class="dropdown-item" href="MemberList.aspx">會員清單</a>
                             </div>
                         </li>
                     </ul>

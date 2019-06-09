@@ -31,7 +31,7 @@ public partial class Login : System.Web.UI.Page
         if (mber.CompareUserName(Convert.ToString(Session["UserName"])) == false && mber.ComparePassWord(Convert.ToString(Session["PassWord"])) == false)
         {
             mber.strMsg("該用戶尚未註冊，請先加入會員再執行此動作!");
-            Response.Redirect("~/AddMember.aspx");
+            Response.Redirect("~/Registered.aspx");
         }
         else
         {
